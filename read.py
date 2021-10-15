@@ -1,3 +1,4 @@
+#Read an image
 import cv2
 print("package imported")
 
@@ -5,3 +6,16 @@ img = cv2.imread("resouces/joker.jpg")
 
 cv2.imshow("output",img)
 cv2.waitKey(0)
+
+##opening an web cam
+import cv2
+cap = cv2.VideoCapture(0)
+cap.set(3,640)
+cap.set(4,480)
+
+while True:
+    sucess, img = cap.read()
+    cv2.imshow("Video",img)
+    if cv2.waitKey(1) & 0xFF ==ord('q'):
+        break
+
